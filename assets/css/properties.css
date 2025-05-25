@@ -1,0 +1,169 @@
+/* ----- Global Site Properties ----- */
+@font-face {
+  font-family: Geist;
+  src: url(../fonts/Geist-Black.woff2) format("woff2-variations");
+  font-weight: 300 900;
+}
+
+:root {
+  --night-black: #010101;
+  --snow-white: #d0d3ca;
+  --midnight-purple: #6f00ee;
+  --pink-dye: #ff00bb;
+  --pink-faded: #ff7adce6;
+  --default-transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Attribute Animations & Settings */
+a {
+  color: var(--pink-dye);
+  transition: var(--default-transition);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--midnight-purple);
+  text-decoration: underline;
+}
+
+.hightlight {
+  color: var(--pink-dye);
+  text-decoration: underline;
+}
+.hightlight:hover {
+  color: var(--midnight-purple);
+  text-decoration: none;
+}
+
+.list-contents {
+  list-style: none;
+}
+
+.dual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 12px;
+}
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+
+button {
+  padding: 8px 12px;
+  font-weight: 800;
+  background-color: var(--night-black);
+  color: var(--snow-white);
+  border: 2px solid var(--night-black);
+  transition: var(--default-transition);
+}
+button:hover {
+  cursor: pointer;
+  background-color: var(--snow-white);
+  color: var(--night-black);
+  border-radius: 32px;
+  transform: scale(0.9);
+}
+
+header > a.logo,
+footer > a.logo {
+  color: var(--night-black);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+header,
+footer,
+#hero,
+#about,
+#menu,
+#reservations,
+#contacts {
+  border: 2px solid var(--night-black);
+}
+
+section {
+  padding: 48px 24px;
+}
+
+/* ----- Media Screen for Mobile Compatibility ----- */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  header {
+    padding: 12px 24px;
+  }
+
+  #hero > .dual-grid {
+    grid-template-columns: repeat(1, 1fr); /* 40/60 for tablets */
+  }
+  #hero > .dual-grid > .grid-contents > .container a:not(:first-child) {
+    margin: 0;
+    float: right;
+  }
+
+  #about {
+    padding: 48px 24px;
+  }
+
+  #menu .dual-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 0px;
+  }
+  .menu-item {
+    margin: 8px 0;
+  }
+  .price-controller span {
+    padding: 0 4px;
+  }
+
+  #reservations form .dual-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 0px;
+  }
+
+  #contacts form .dual-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 0px;
+  }
+
+  footer {
+    padding: 24px;
+    font-size: 12px;
+  }
+  footer .dual-grid {
+    grid-template-columns: 60% 40%;
+  }
+
+  footer .social-links a img {
+    max-width: 32px;
+  }
+  footer .grid-contents a button {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,376 @@
+/* ----- Main Site Properties & Optimization (Compatibility) ----- */
+body {
+  width: auto;
+  min-height: 100vh;
+  background: var(--snow-white);
+  color: var(--night-black);
+  font-size: 18px;
+  font-family: Geist;
+  z-index: 1;
+  transition: var(--default-transition);
+}
+
+/* ----- Header Properties ----- */
+header {
+  padding: 24px 48px;
+  background: var(--snow-white);
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+header > span.openbtn {
+  cursor: pointer;
+  transform: scale(
+    1.25
+  ); /* to avoid the bottom padding expanding with the size expansion */
+  transition: var(--default-transition);
+}
+header > span.openbtn:hover {
+  transform: scale(1.5);
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: var(--night-black);
+}
+
+.overlay-content {
+  position: relative;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+}
+
+.overlay-content a {
+  padding: 8px;
+  color: var(--snow-white);
+  transition: var(--default-transition);
+}
+.overlay-content a:hover,
+.overlay-content a:focus {
+  color: var(--midnight-purple);
+  transform: scale(0.95);
+}
+
+.overlay-content > .nav-links {
+  margin-bottom: 48px;
+}
+.overlay-content > .nav-links a {
+  font-size: 36px;
+  display: block;
+}
+
+.overlay-content > .social-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+}
+.overlay-content > .social-links a {
+  font-size: 24px;
+}
+
+.overlay-content > .copyright {
+  position: relative;
+  top: 32px;
+}
+
+.overlay .closebtn {
+  color: var(--snow-white);
+  text-decoration: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 60px;
+}
+.overlay .closebtn:hover {
+  transform: scale(0.85);
+}
+
+/* ----- Hero Section Properties ----- */
+#hero {
+  background: url(../images/pasta-background.jpg) center/cover no-repeat fixed;
+  /* https://wallpapers.com/background/4k-pasta-background-3840-x-2400-4bvbm9yzpi054ep0.html */
+}
+
+#hero > .dual-grid > .grid-contents {
+  padding: 24px;
+  background: var(--pink-faded);
+  border: 2px solid var(--night-black);
+}
+#hero > .dual-grid > .grid-contents > .container {
+  margin: 32px 0;
+}
+
+#hero > .dual-grid > .grid-contents p {
+  margin: 24px 0;
+  font-size: 20px;
+}
+#hero > .dual-grid > .grid-contents ul {
+  padding: 6px 12px;
+}
+
+#hero > .dual-grid > .grid-contents ul li {
+  padding: 8px;
+  transition: var(--default-transition);
+}
+#hero > .dual-grid > .grid-contents ul li:hover {
+  cursor: pointer;
+  padding: 16px 24px; /* interactive element to make it look like text is floating */
+}
+
+#hero > .dual-grid > .grid-contents > .container a:not(:first-child) {
+  margin-left: 16px;
+}
+
+/* ----- About Section Properties ----- */
+#about {
+  padding: 84px 48px;
+}
+#about > .main-container {
+  padding: 24px;
+  background: var(--pink-faded);
+  border: 2px solid var(--night-black);
+}
+#about > .main-container > .container {
+  margin: 32px 0;
+}
+
+#about > .main-container p {
+  margin: 24px 0;
+  font-size: 20px;
+}
+#about > .main-container ul {
+  padding: 6px 12px;
+}
+
+#about > .main-container ul li {
+  padding: 8px;
+  transition: var(--default-transition);
+}
+#about > .main-container ul li:hover {
+  cursor: pointer;
+  padding: 16px 24px; /* interactive element to make it look like text is floating */
+}
+
+#about > .main-container > .container a:not(:first-child) {
+  margin-left: 16px;
+}
+
+/* ----- Menu Section Properties ----- */
+#menu {
+  background: url(../images/pizza-background.jpg) center/cover no-repeat fixed;
+}
+#menu h2 {
+  color: var(--snow-white);
+}
+
+/* Search */
+.menu-search {
+  margin: 36px 0;
+}
+
+#search-bar {
+  width: 100%;
+  padding: 16px;
+  background: var(--snow-white);
+  border: 2px solid var(--night-black);
+  transition: var(--default-transition);
+}
+#search-bar:hover {
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.suggestion-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+  border: 2px solid var(--night-black);
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: scroll;
+  background: var(--snow-white);
+}
+
+.suggestion-list li {
+  padding: 8px 16px;
+  border-bottom: 2px solid var(--night-black);
+  cursor: pointer;
+  transition: var(--default-transition);
+}
+
+.suggestion-list li:hover {
+  background-color: var(--night-black);
+  color: var(--snow-white);
+  padding: 12px 24px;
+}
+
+/* Menu Grid */
+#menu details {
+  margin: 16px 0;
+}
+#menu summary {
+  padding: 8px 24px;
+  cursor: pointer;
+  background: var(--snow-white);
+  border: 2px solid var(--night-black);
+}
+
+.menu-item {
+  background: var(--pink-faded);
+  border-radius: 12px;
+  margin: 16px 0;
+  padding: 24px 48px;
+  border: 2px solid var(--night-black);
+  transition: var(--default-transition);
+}
+.menu-item:hover {
+  cursor: grab;
+  transform: scale(0.95);
+}
+
+.menu-item h3 {
+  margin-bottom: 8px;
+}
+.price {
+  font-weight: bold;
+  color: var(--midnight-purple);
+}
+.menu-item button {
+  margin-top: 12px;
+}
+
+/* Cart Section */
+.cart-section {
+  margin-top: 36px;
+  padding: 24px;
+  background: var(--night-black);
+  color: var(--snow-white);
+  border: 2px solid var(--night-black);
+}
+
+.cart-list {
+  margin: 16px 0 32px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+.cart-list li {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--snow-white);
+}
+
+.price-controller {
+  position: absolute;
+  right: 60px;
+}
+.price-controller span {
+  padding: 0 8px;
+}
+
+.price-controller span.btn {
+  border: 2px solid var(--snow-white);
+  transition: var(--default-transition);
+}
+.price-controller span.btn:hover {
+  cursor: pointer;
+  border-radius: 32px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  font-size: 16px;
+  border: 2px solid var(--snow-white);
+}
+
+/* ----- Reservation Section Properties ----- */
+#reservations form {
+  padding: 48px 24px;
+  background: var(--pink-faded);
+  border: 2px solid var(--night-black);
+}
+#reservations form .container {
+  margin-bottom: 24px;
+}
+
+#reservations form .dual-grid > input,
+#reservations form > textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 16px;
+  background: var(--snow-white);
+  color: var(--night-black);
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid var(--night-black);
+}
+#reservations form textarea {
+  min-height: 240px;
+}
+
+/* ----- Reservation Section Properties ----- */
+#contacts form {
+  padding: 48px 24px;
+  background: var(--pink-faded);
+  border: 2px solid var(--night-black);
+}
+#contacts form .container {
+  margin-bottom: 24px;
+}
+
+#contacts form .dual-grid > input,
+#contacts form > textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 16px;
+  background: var(--snow-white);
+  color: var(--night-black);
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid var(--night-black);
+}
+#contacts form textarea {
+  min-height: 240px;
+}
+
+/* ----- Footer Properties ----- */
+footer {
+  padding: 24px 48px;
+  background: var(--snow-white);
+}
+
+footer .dual-grid {
+  margin: 16px 0;
+  font-weight: 600;
+}
+
+footer .social-links a {
+  text-decoration: none;
+}
+footer .social-links a:not(:first-child) {
+  margin-left: 12px;
+}
+
+footer .social-links a img {
+  max-width: 36px;
+  transition: var(--default-transition);
+}
+footer .social-links a img:hover {
+  transform: scale(0.9);
+}
+
+footer > .copyright {
+  text-align: center;
+}

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Katlego Kesalopa" />
+    <meta
+      name="description"
+      content="Authentic Italian restaurant specializing in pasta, pizza and wine. Dine-in, takeaway and delivery available."
+    />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pasta Vino Pizza | Home</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/properties.css" />
+  </head>
+
+  <body id="top">
+    <header>
+      <a href="./index.html" class="logo">Pasta Vino Pizza</a>
+
+      <span class="openbtn" onclick="activateNav()"> &#9776; </span>
+
+      <div id="nav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="deactivateNav()">
+          &times;
+        </a>
+
+        <div class="overlay-content">
+          <div class="nav-links">
+            <a href="./about.html">About Us</a>
+            <a href="./menu.html">Browse Menu</a>
+            <a href="./reserve.html">Reservations</a>
+            <a href="./contact.html">Contact Us</a>
+          </div>
+
+          <div class="social-links">
+            <a href="tel:+">telephone</a>
+            <a href="mailto:">e-mail</a>
+            <a href="">terms & Conditions</a>
+            <a href="">privacy policy</a>
+          </div>
+
+          <div class="copyright">
+            <a href="#">
+              &copy; 2025 | Pasta Vino Pizza | All Rights Reserved
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="menu" class="menu-section">
+      <div class="menu">
+        <h2>Browse Through Our Menu</h2>
+
+        <!-- Search -->
+        <div class="menu-search">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search for dishes or drinks..."
+            oninput="filterMenuItems()"
+            autocomplete="off"
+          />
+
+          <ul id="suggestions" class="suggestion-list"></ul>
+        </div>
+
+        <!-- Menu Categories -->
+        <div id="menu-items">
+          <details open>
+            <summary>🍕 Pizza</summary>
+            <div class="dual-grid">
+              <div class="menu-item" data-name="Margherita">
+                <h3>Margherita</h3>
+                <p>Classic tomato & mozzarella.</p>
+                <p class="price">P60</p>
+                <button onclick="addToCart('Margherita', 60)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Diavola">
+                <h3>Diavola</h3>
+                <p>Spicy salami, chili, mozzarella.</p>
+                <p class="price">P75</p>
+                <button onclick="addToCart('Diavola', 75)">Add to Cart</button>
+              </div>
+              <div class="menu-item" data-name="Quattro Formaggi">
+                <h3>Quattro Formaggi</h3>
+                <p>
+                  Four cheeses: mozzarella, gorgonzola, parmesan, provolone.
+                </p>
+                <p class="price">P85</p>
+                <button onclick="addToCart('Quattro Formaggi', 85)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Prosciutto e Funghi">
+                <h3>Prosciutto e Funghi</h3>
+                <p>Ham, mushrooms, tomato sauce, mozzarella.</p>
+                <p class="price">P78</p>
+                <button onclick="addToCart('Prosciutto e Funghi', 78)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Vegetariana">
+                <h3>Vegetariana</h3>
+                <p>Grilled vegetables, olives, mozzarella.</p>
+                <p class="price">P72</p>
+                <button onclick="addToCart('Vegetariana', 72)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Capricciosa">
+                <h3>Capricciosa</h3>
+                <p>Ham, mushrooms, artichokes, olives, egg.</p>
+                <p class="price">P80</p>
+                <button onclick="addToCart('Capricciosa', 80)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="BBQ Chicken">
+                <h3>BBQ Chicken</h3>
+                <p>Chicken, BBQ sauce, onions, mozzarella.</p>
+                <p class="price">P76</p>
+                <button onclick="addToCart('BBQ Chicken', 76)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Pepperoni">
+                <h3>Pepperoni</h3>
+                <p>Classic pepperoni and mozzarella on tomato base.</p>
+                <p class="price">P70</p>
+                <button onclick="addToCart('Pepperoni', 70)">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </details>
+
+          <details>
+            <summary>🍝 Pasta</summary>
+            <div class="dual-grid">
+              <div class="menu-item" data-name="Carbonara">
+                <h3>Carbonara</h3>
+                <p>Egg, cheese, pancetta.</p>
+                <p class="price">P70</p>
+                <button onclick="addToCart('Carbonara', 70)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Pesto Pasta">
+                <h3>Pesto Pasta</h3>
+                <p>Fresh basil, pine nuts, parmesan.</p>
+                <p class="price">P68</p>
+                <button onclick="addToCart('Pesto Pasta', 68)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Bolognese">
+                <h3>Bolognese</h3>
+                <p>Rich beef ragu with tomato and garlic.</p>
+                <p class="price">P75</p>
+                <button onclick="addToCart('Bolognese', 75)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Seafood Linguine">
+                <h3>Seafood Linguine</h3>
+                <p>Shrimp, squid, garlic, and chili in tomato sauce.</p>
+                <p class="price">P85</p>
+                <button onclick="addToCart('Seafood Linguine', 85)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Lasagna">
+                <h3>Lasagna</h3>
+                <p>Layered pasta with meat sauce and bechamel.</p>
+                <p class="price">P78</p>
+                <button onclick="addToCart('Lasagna', 78)">Add to Cart</button>
+              </div>
+              <div class="menu-item" data-name="Aglio e Olio">
+                <h3>Aglio e Olio</h3>
+                <p>Garlic, olive oil, chili, and parsley.</p>
+                <p class="price">P65</p>
+                <button onclick="addToCart('Aglio e Olio', 65)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Truffle Tagliatelle">
+                <h3>Truffle Tagliatelle</h3>
+                <p>Tagliatelle pasta in creamy truffle sauce.</p>
+                <p class="price">P90</p>
+                <button onclick="addToCart('Truffle Tagliatelle', 90)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Arrabbiata">
+                <h3>Arrabbiata</h3>
+                <p>Spicy tomato sauce with garlic and chili.</p>
+                <p class="price">P68</p>
+                <button onclick="addToCart('Arrabbiata', 68)">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </details>
+
+          <details>
+            <summary>🍷 Wine</summary>
+            <div class="dual-grid">
+              <div class="menu-item" data-name="Chianti">
+                <h3>Chianti</h3>
+                <p>Dry red wine from Tuscany.</p>
+                <p class="price">P120</p>
+                <button onclick="addToCart('Chianti', 120)">Add to Cart</button>
+              </div>
+              <div class="menu-item" data-name="Prosecco">
+                <h3>Prosecco</h3>
+                <p>Light and sparkling white wine.</p>
+                <p class="price">P110</p>
+                <button onclick="addToCart('Prosecco', 110)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Barolo">
+                <h3>Barolo</h3>
+                <p>Rich, full-bodied red wine.</p>
+                <p class="price">P150</p>
+                <button onclick="addToCart('Barolo', 150)">Add to Cart</button>
+              </div>
+              <div class="menu-item" data-name="Pinot Grigio">
+                <h3>Pinot Grigio</h3>
+                <p>Crisp, refreshing white wine.</p>
+                <p class="price">P105</p>
+                <button onclick="addToCart('Pinot Grigio', 105)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Rosé">
+                <h3>Rosé</h3>
+                <p>Light-bodied, fruity pink wine.</p>
+                <p class="price">P100</p>
+                <button onclick="addToCart('Rosé', 100)">Add to Cart</button>
+              </div>
+              <div class="menu-item" data-name="Merlot">
+                <h3>Merlot</h3>
+                <p>Soft, easy-drinking red wine.</p>
+                <p class="price">P115</p>
+                <button onclick="addToCart('Merlot', 115)">Add to Cart</button>
+              </div>
+              <div class="menu-item" data-name="Sangiovese">
+                <h3>Sangiovese</h3>
+                <p>Fruity and spicy red wine.</p>
+                <p class="price">P125</p>
+                <button onclick="addToCart('Sangiovese', 125)">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="menu-item" data-name="Lambrusco">
+                <h3>Lambrusco</h3>
+                <p>Lightly sparkling red wine, slightly sweet.</p>
+                <p class="price">P95</p>
+                <button onclick="addToCart('Lambrusco', 95)">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Cart -->
+        <div class="cart-section">
+          <h3>Your Cart</h3>
+          <ul id="cart" class="cart-list"></ul>
+          <p>Total: P<span id="total">0.00</span></p>
+          <button class="checkout-btn" onclick="sendCheckoutToWhatsApp()">
+            Checkout 🛒
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <a href="./index.html" class="logo">Pasta Vino Pizza</a>
+
+      <div class="dual-grid">
+        <div class="grid-contents">
+          <div class="social-links">
+            <a href="">
+              <img src="./assets/images/icons/instagram.png" alt="ig" />
+            </a>
+            <a href="">
+              <img src="./assets/images/icons/facebook.png" alt="fb" />
+            </a>
+            <a href="">
+              <img src="./assets/images/icons/whatsapp.png" alt="wa" />
+            </a>
+            <a href="">
+              <img src="./assets/images/icons/twitter.png" alt="x" />
+            </a>
+          </div>
+        </div>
+
+        <div class="grid-contents">
+          <a href="./menu.html">
+            <button>Start Ordering</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="dual-grid">
+        <div class="grid-contents">
+          <h4>More Information:</h4>
+
+          <ul class="list-contents">
+            <li>Operating Hours: 9am - 5pm</li>
+            <li>Telephone: <a href="tel:+">+267 71-234-567</a></li>
+            <li>
+              Email:
+              <a href="mailto:">pastaVinopizza</a>
+            </li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="grid-contents">
+          <h4>Browse Site</h4>
+
+          <ul class="list-contents">
+            <li>
+              <a href="./about.html">About Us</a>
+            </li>
+            <li>
+              <a href="./menu.html">Browse Menu</a>
+            </li>
+            <li>
+              <a href="./reserve.html">Reservations</a>
+            </li>
+            <li>
+              <a href="./contact.html">Contact Us</a>
+            </li>
+            <li>
+              <a href="#top">Back To Top</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <a href="#"> &copy; 2025 | Pasta Vino Pizza | All Rights Reserved </a>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
