@@ -26,7 +26,7 @@ html {
 
 /* Attribute Animations & Settings */
 a {
-  color: var(--pink-dye);
+  color: var(--night-black);
   transition: var(--default-transition);
   text-decoration: none;
 }
